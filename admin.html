@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - My Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <i class="fas fa-blog"></i>
+                    <span>My Blog Admin</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">View Blog</a></li>
+                    <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Admin Panel -->
+    <section class="admin-panel">
+        <div class="container">
+            <div class="admin-header fade-in">
+                <h1><i class="fas fa-tachometer-alt"></i> Admin Dashboard</h1>
+                <button class="btn btn-primary" id="newPostBtn">
+                    <i class="fas fa-plus"></i> New Post
+                </button>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-grid fade-in-up">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalPosts">0</h3>
+                        <p>Total Posts</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalViews">0</h3>
+                        <p>Total Views</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalCategories">0</h3>
+                        <p>Categories</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Posts Management -->
+            <div class="posts-management fade-in-up">
+                <h2><i class="fas fa-list"></i> Manage Posts</h2>
+                <div class="admin-posts-list" id="adminPostsList">
+                    <!-- Posts will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Post Editor Modal -->
+    <div class="modal" id="postModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"><i class="fas fa-edit"></i> New Post</h2>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="postForm" class="post-form">
+                <input type="hidden" id="postId">
+                
+                <div class="form-group">
+                    <label for="postTitle"><i class="fas fa-heading"></i> Title</label>
+                    <input type="text" id="postTitle" required placeholder="Enter post title">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="postCategory"><i class="fas fa-folder"></i> Category</label>
+                        <input type="text" id="postCategory" required placeholder="e.g., Technology, Travel">
+                    </div>
+                    <div class="form-group">
+                        <label for="postAuthor"><i class="fas fa-user"></i> Author</label>
+                        <input type="text" id="postAuthor" required placeholder="Author name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="postImage"><i class="fas fa-image"></i> Image URL</label>
+                    <input type="url" id="postImage" placeholder="https://example.com/image.jpg">
+                </div>
+
+                <div class="form-group">
+                    <label for="postExcerpt"><i class="fas fa-align-left"></i> Excerpt</label>
+                    <textarea id="postExcerpt" rows="2" required placeholder="Short description..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="postContent"><i class="fas fa-file-alt"></i> Content</label>
+                    <textarea id="postContent" rows="10" required placeholder="Write your post content here..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save Post
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <h2><i class="fas fa-exclamation-triangle"></i> Confirm Delete</h2>
+                <button class="modal-close" id="closeDeleteModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this post? This action cannot be undone.</p>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" id="cancelDeleteBtn">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteBtn">
+                    <i class="fas fa-trash"></i> Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

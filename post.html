@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post - My Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <i class="fas fa-blog"></i>
+                    <span>My Blog</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="admin.html" class="admin-link"><i class="fas fa-user-shield"></i> Admin</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress" id="readingProgress"></div>
+
+    <!-- Post Content -->
+    <article class="post-page">
+        <div class="container-small">
+            <div class="post-header fade-in" id="postHeader">
+                <!-- Will be loaded dynamically -->
+            </div>
+            <div class="post-body fade-in-up" id="postBody">
+                <!-- Will be loaded dynamically -->
+            </div>
+            <div class="post-footer fade-in-up">
+                <div class="share-buttons">
+                    <h3>Share this post</h3>
+                    <div class="social-share">
+                        <button class="share-btn facebook"><i class="fab fa-facebook"></i></button>
+                        <button class="share-btn twitter"><i class="fab fa-twitter"></i></button>
+                        <button class="share-btn linkedin"><i class="fab fa-linkedin"></i></button>
+                        <button class="share-btn copy" id="copyLinkBtn"><i class="fas fa-link"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Related Posts -->
+    <section class="related-posts">
+        <div class="container">
+            <h2 class="section-title">Related Posts</h2>
+            <div class="posts-grid" id="relatedPosts">
+                <!-- Related posts will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>My Blog</h3>
+                    <p>Sharing knowledge and experiences</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="admin.html">Admin</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 My Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="post.js"></script>
+</body>
+</html>
